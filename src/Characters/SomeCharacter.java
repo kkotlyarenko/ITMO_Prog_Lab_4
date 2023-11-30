@@ -1,6 +1,8 @@
 package Characters;
 
 import Base.DoAction;
+import Exceptions.EmptyAction;
+import Exceptions.IncorrectPerson;
 
 import java.util.Objects;
 
@@ -18,13 +20,17 @@ abstract class SomeCharacter {
         return Name;
     }
 
-    public void doAction(DoAction a, String what){
-        String s = a.doSmth();
-        boolean is_person_correct = (a.PersonName().toString().equals(getClass().getSimpleName().toString())) ? true : false;
-        if (is_person_correct)
-            System.out.println(this.Name + " " + s + " " + what);
-        else
-            System.out.println("incorerect person!");
+    public String doAction(DoAction a, String what) throws IncorrectPerson, EmptyAction {
+        if (what != null) {
+            String s = a.doSmth();
+            boolean is_person_correct = (a.PersonName().toString().equals(getClass().getSimpleName().toString())) ? true : false;
+            if (is_person_correct)
+                return(this.Name + " " + s + " " + what);
+            else
+                throw new IncorrectPerson("You are trying to use " + a.PersonName().toString() + " action for " + getClass().getSimpleName().toString());
+        }
+
+        throw new EmptyAction("Incorrect structure do doAction method, use \"\" except null");
     }
 
     public boolean equals(Object o) {

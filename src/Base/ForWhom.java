@@ -3,5 +3,8 @@ package Base;
 public enum ForWhom {
     Carlson,
     FrekenBok,
-    Malysh
+    Malysh,
+    Bosse,
+    Betan,
+    Papa
 }
