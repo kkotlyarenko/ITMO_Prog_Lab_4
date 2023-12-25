@@ -1,6 +1,6 @@
-package Actions;
+package actions;
 
-import Base.*;
+import base.*;
 
 public class LeadPeople implements DoAction {
     public String doSmth(){

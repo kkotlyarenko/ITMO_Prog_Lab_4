@@ -1,6 +1,7 @@
-import Actions.*;
-import Characters.*;
-import Exceptions.*;
+import actions.*;
+import characters.*;
+import exceptions.*;
+
 
 public class Main {
     public static void main(String[] args) throws IncorrectPerson {
@@ -10,7 +11,26 @@ public class Main {
             Malysh malysh = new Malysh();
             Bosse bosse = new Bosse();
             Betan betan = new Betan();
-            Papa papa = new Papa();
+
+//  local class
+            class Papa extends SomeCharacter{
+                private Papa(){
+                    super("Папа");
+                }
+                @Override
+                public String Gender(){
+                    return "Male";
+                }
+            }
+            final SomeCharacter papa = new Papa();
+
+// anonymous
+            final SomeCharacter ImposterCarlson = new Carlson(){
+                @Override
+                public String Gender(){
+                    return ("Female");
+                }
+            };
 
             //FrekenBok actions
             LeadPeople lPeople = new LeadPeople();
@@ -54,15 +74,15 @@ public class Main {
             System.out.println(papa.doAction(ltLondon, ""));
 
 
-//            System.out.println(frekenbok.doAction(Underst, ""));
-//            System.out.println(malysh.doAction(wAlarmed, null));
+            System.out.println(frekenbok.doAction(Underst, "")); //checked
+//            System.out.println(malysh.doAction(wAlarmed, null)); //unchecked
 
             carlson.fly();
-            System.out.print(frekenbok.Gender());
+            System.out.println(frekenbok.Gender());
+            System.out.println(ImposterCarlson.Gender());
 
         } catch (IncorrectPerson e) {
             System.out.println(e);
         }
-
     }
 }

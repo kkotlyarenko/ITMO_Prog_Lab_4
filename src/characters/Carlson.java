@@ -1,6 +1,6 @@
-package Characters;
+package characters;
 
-import Base.Helicopter;
+import base.Helicopter;
 
 public class Carlson extends SomeCharacter implements Helicopter{
     public void fly(){

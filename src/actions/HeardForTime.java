@@ -1,6 +1,6 @@
-package Actions;
+package actions;
 
-import Base.*;
+import base.*;
 
 public class HeardForTime implements DoAction {
     public String doSmth(){

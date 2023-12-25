@@ -1,12 +1,12 @@
-package Characters;
+package characters;
 
-import Base.DoAction;
-import Exceptions.EmptyAction;
-import Exceptions.IncorrectPerson;
+import base.DoAction;
+import exceptions.EmptyAction;
+import exceptions.IncorrectPerson;
 
 import java.util.Objects;
 
-abstract class SomeCharacter {
+public abstract class SomeCharacter {
     protected String Name;
     public SomeCharacter(String name) {
         Name = name;
@@ -27,10 +27,10 @@ abstract class SomeCharacter {
             if (is_person_correct)
                 return(this.Name + " " + s + " " + what);
             else
-                throw new IncorrectPerson("You are trying to use " + a.PersonName().toString() + " action for " + getClass().getSimpleName().toString());
+                throw new IncorrectPerson(this);
         }
 
-        throw new EmptyAction("Incorrect structure do doAction method, use \"\" except null");
+        throw new EmptyAction();
     }
 
     public boolean equals(Object o) {
@@ -40,7 +40,7 @@ abstract class SomeCharacter {
         return Objects.equals(Name, that.Name);
     }
 
-    abstract String Gender();
+    public abstract String Gender();
 
     public String toString() {
         return "AnonymEntity{" +

@@ -1,7 +1,7 @@
-package Actions;
+package actions;
 
-import Base.DoAction;
-import Base.ForWhom;
+import base.DoAction;
+import base.ForWhom;
 
 public class LiveWithChilds implements DoAction {
     public String doSmth(){

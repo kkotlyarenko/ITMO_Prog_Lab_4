@@ -1,6 +1,6 @@
-package Actions;
+package actions;
 
-import Base.*;
+import base.*;
 
 public class Laugh implements DoAction {
     public String doSmth(){

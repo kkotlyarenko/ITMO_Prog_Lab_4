@@ -1,5 +1,5 @@
-package Actions;
-import Base.*;
+package actions;
+import base.*;
 public class LeftToLondon implements DoAction{
     public String doSmth(){
         return "улетел в Лондон";

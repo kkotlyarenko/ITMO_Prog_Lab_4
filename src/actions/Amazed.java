@@ -1,10 +1,10 @@
-package Actions;
+package actions;
 
-import Base.*;
+import base.*;
 
-public class Left implements DoAction {
+public class Amazed implements DoAction {
     public String doSmth(){
-        return "ушёл";
+        return "изумился";
     }
     public String PersonName(){
         return String.valueOf(ForWhom.Malysh);

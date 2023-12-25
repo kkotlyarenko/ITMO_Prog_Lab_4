@@ -1,4 +1,4 @@
-package Characters;
+package characters;
 
 public class Betan extends SomeCharacter{
     public Betan(){
